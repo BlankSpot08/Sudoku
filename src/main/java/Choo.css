@@ -1,3 +1,3 @@
 .root .button {
-    -fx-pref-width: 20;
+    -fx-min-width: 20;
 }

@@ -8,9 +8,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 public class Sudoku {
-    IntegerProperty[][][] tiles = new IntegerProperty[3][9][3];
+    private IntegerProperty[][][] tiles = new IntegerProperty[3][9][3];
 
-    public IntegerProperty[][][] generate() {
+    public final IntegerProperty[][][] generate() {
         tiles = initialize9x9(tiles);
 
         for (int i = 0; i < tiles.length; i++) {

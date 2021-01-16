@@ -1,6 +1,6 @@
 package utilities.difficulty;
 
-public class Easy extends Difficulty {
+public final class Easy extends Difficulty {
     public Easy() {  }
 
     @Override
