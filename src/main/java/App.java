@@ -23,6 +23,7 @@ public class App extends Application {
     public void start(Stage window) {
         window.setScene(createScene(window));
         window.setTitle("Sudoku");
+
         window.setResizable(false);
         window.centerOnScreen();
 
@@ -35,7 +36,7 @@ public class App extends Application {
         window.show();
     }
 
-    private Scene createScene(Stage window) {
+    public Scene createScene(Stage window) {
         mainPane = new BorderPane();
 
         SubComponent header = new Header();

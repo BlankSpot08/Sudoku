@@ -1,0 +1,15 @@
+.root {
+}
+
+#title {
+    -fx-background-color: red;
+    -fx-pref-height: 75;
+}
+
+#title .label {
+    -fx-background-color: blue;
+}
+
+.button {
+    -fx-min-width: 25px;
+}
