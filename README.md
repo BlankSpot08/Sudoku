@@ -43,17 +43,15 @@ The same technique can be expanded by using information from perpendicular rows 
 Often only one number can be in a square because the remaining eight are already used in the relevant row, column and box. Taking a careful look at square b4 we can see that 3, 4, 7 and 8 are already used in the same box, 1 and 6 are used in the same row, and 5 and 9 are used in the same column. Eliminating all the above numbers leaves 2 as the single candidate for square b4.
 ![image](https://user-images.githubusercontent.com/40406575/120179965-d064e980-c23d-11eb-884b-83d81240e456.png)
 
-![image](https://user-images.githubusercontent.com/40406575/120179999-d955bb00-c23d-11eb-9167-10be51d97996.png)
-
 4. Eliminating numbers from rows, columns and boxes:
 There are more complex ways to find numbers by using the process of elimination. In this example the 1 in square c8 implies that either square e7 or square e9 must contain 1. Whichever the case may be, the 1 of column e is in box 8 and it is therefore not possible to have 1 in the centre column of box 2. So the only square left for 1 in box 2 is square d2.
 
-![image](https://user-images.githubusercontent.com/40406575/120180022-e1155f80-c23d-11eb-8ef8-0d323d74c089.png)
+![image](https://user-images.githubusercontent.com/40406575/120179999-d955bb00-c23d-11eb-9167-10be51d97996.png)
 
 5. Searching for missing numbers in rows and columns:
 This method can be particularly useful when rows (and columns) are close to completion. Let’s take a look at row 6. Seven of the nine squares contain the numbers 1, 2, 3, 4, 5, 8 and 9, which means that 6 and 7 are missing. However, 6 cannot be in square h6 because there is already 6 in that column. Therefore the 6 must be in square b6.
 
-![image](https://user-images.githubusercontent.com/40406575/120180038-e672aa00-c23d-11eb-9489-721b99935808.png)
+![image](https://user-images.githubusercontent.com/40406575/120180022-e1155f80-c23d-11eb-8ef8-0d323d74c089.png)
 
 Analyzing techniques
 As Sudoku puzzle levels get harder you will find the simple scanning methods described above are not enough and more sophisticated solving techniques must be used. Hard puzzles require deeper logic analysis which is done with the aid of pencilmarks. Sudoku pencilmarking is a systematic process writing small numbers inside the squares to denote which ones may fit in. After pencilmarking the puzzle, the solver must analyze the results, identify special number combinations and deduce which numbers should be placed where. Here are some ways of using analyzing techniques:
@@ -61,19 +59,20 @@ As Sudoku puzzle levels get harder you will find the simple scanning methods des
 1. Eliminating squares using Naked Pairs in a box:
 In this example, squares c7 and c8 in box 7 can only contain 4 and 9 as shown with the red pencilmarks below. We don’t know which is which, but we do know that both squares are occupied. In addition, square a6 excludes 6 from being in the left column of box 7. As a result the 6 can only be in square b9. Such cases where the same pair can only be placed in two boxes is called Disjoint Subsets, and if the Disjoint Subsets are easy to see then they are called Naked Pairs.
 
-![image](https://user-images.githubusercontent.com/40406575/120180062-ec688b00-c23d-11eb-90e6-1266dd10dfa4.png)
+![image](https://user-images.githubusercontent.com/40406575/120180038-e672aa00-c23d-11eb-9489-721b99935808.png)
 
 2. Eliminating squares using Naked Pairs in rows and columns:
 The previous solving technique is useful for deducing a number within a row or column instead of a box. In this example we see that squares d9 and f9 in box 8 can only contain 2 and 7. Again we don’t know which is which, but we do know that both squares are occupied. The numbers which remain to be placed in row 9 are 1, 6 and 8. However, 6 can’t be placed in square a9 or in square i9, so the only possible place is square c9.
 
-![image](https://user-images.githubusercontent.com/40406575/120180086-f1c5d580-c23d-11eb-84d0-1e7714718608.png)
+
+![image](https://user-images.githubusercontent.com/40406575/120180062-ec688b00-c23d-11eb-90e6-1266dd10dfa4.png)
 
 3. Eliminating squares using Hidden Pairs in rows and columns:
 Disjoint Subsets are not always obvious to see at first sight, in which case they are called Hidden Pairs. If we take a very close look at the pencilmarks in row 7 we can see that both 1 and 4 can only be in square f7 and square g7. This means that 1 and 4 are a Hidden Pair, and that square f7 and square g7 cannot contain any other number. Using the scanning technique we see that 7 can only be in square d7.
 
-![image](https://user-images.githubusercontent.com/40406575/120180120-f8ece380-c23d-11eb-8721-a4f6042cd4ea.png)
+![image](https://user-images.githubusercontent.com/40406575/120180086-f1c5d580-c23d-11eb-84d0-1e7714718608.png)
 
 4. Eliminating squares using X-Wing:
 The X-Wing technique is used in rare situations which occur in some extremely difficult puzzles. Scanning column a we see that 4 can only be in square a2 or square a9. Similarly, 4 can only be in square i2 or square i9. Because of the X-Wing pattern where boxes are in the same row (or column), a new logic constraint occurs: it is obvious that in row 2 the 4 can only be either in square a2 or in square i2, and it cannot be in any other square. Therefore 4 is excluded from square c2, and square c2 must be 2.
 
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/40406575/120180120-f8ece380-c23d-11eb-8721-a4f6042cd4ea.png)
