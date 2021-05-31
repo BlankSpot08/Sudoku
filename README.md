@@ -22,7 +22,8 @@ The number of classic 9×9 Sudoku solution grids is 6,670,903,752,021,072,936,96
 
 Unlike the number of complete Sudoku grids, the number of minimal 9×9 Sudoku puzzles is not precisely known. (A minimal puzzle is one in which no clue can be deleted without losing uniqueness of the solution.) However, statistical techniques combined with a puzzle generator show that about (with 0.065% relative error) 3.10 × 1037 minimal puzzles and 2.55 × 1025 nonessentially equivalent minimal puzzles exist.
 
-**Sudoku techniques**
+**Sudoku techniques**</br>
+
 Sudoku grid consists of 81 squares divided into nine columns marked a through i, and nine rows marked 1 through 9. The grid is also divided into nine 3x3 sub-grids named boxes which are marked box 1 through box 9.
 
 Scanning techniques
