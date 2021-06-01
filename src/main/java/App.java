@@ -7,8 +7,12 @@ import components.controller.Controller;
 import javafx.application.Application;
 import javafx.beans.property.BooleanProperty;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 import utilities.difficulty.Easy;
 
 public class App extends Application {
@@ -33,6 +37,8 @@ public class App extends Application {
             closeProgram(window);
         });
 
+        window.getIcons().add(new Image("/Sudoku.png"));
+
         window.show();
     }
 
@@ -42,16 +48,24 @@ public class App extends Application {
         SubComponent header = new Header();
         mainPane.setTop(header.createMainPane());
 
-        Board board = new Board(new Easy());
-        mainPane.setLeft(board.createMainPane());
-
-        Controller controller = new Controller(board);
-        mainPane.setRight(controller.createMainPane());
+        mainPane.setCenter(createCenterMainPane());
 
         mainScene = new Scene(mainPane, 1000, 750);
         mainScene.getStylesheets().add("Choo.css");
 
         return mainScene;
+    }
+
+    public HBox createCenterMainPane() {
+        HBox hBox = new HBox(25);
+
+        Board board = new Board(new Easy());
+
+        Controller controller = new Controller(board);
+
+        hBox.getChildren().addAll(board.createMainPane(), controller.createMainPane());
+
+        return hBox;
     }
 
     private void closeProgram(Stage window) {

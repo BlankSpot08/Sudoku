@@ -1,8 +1,6 @@
 package components.board;
 
 import components.SubComponent;
-import javafx.event.EventHandler;
-import javafx.scene.input.KeyEvent;
 import utilities.Sudoku;
 import javafx.beans.property.IntegerProperty;
 import javafx.scene.control.Button;
@@ -36,6 +34,7 @@ public class Board implements SubComponent {
 
     private GridPane createSudokuBoard() {
         GridPane outerPane = new GridPane();
+        outerPane.setId("sudoku");
 
         board = createBoard();
 
@@ -50,11 +49,13 @@ public class Board implements SubComponent {
     }
 
     private GridPane[][] createInnerBoardPane() {
-        GridPane[][] innerBoardPane = new GridPane[3][3];
+        final GridPane[][] innerBoardPane = new GridPane[3][3];
 
         for (int i = 0; i < innerBoardPane.length; i++) {
             for (int j = 0; j < innerBoardPane[i].length; j++) {
                 innerBoardPane[i][j] = new GridPane();
+                innerBoardPane[i][j].setId("3x3-inner");
+
                 for (int k = 0, z = j; k < 3; k++, z+=3) {
                     for (int l = 0; l < 3; l++) {
                         innerBoardPane[i][j].add(board[i][z][l], l, k);
@@ -73,6 +74,8 @@ public class Board implements SubComponent {
             for (int j = 0; j < board[i].length; j++) {
                 for (int k = 0; k < board[i][j].length; k++) {
                     board[i][j][k] = new Button();
+                    board[i][j][k].setPrefWidth(72);
+                    board[i][j][k].setPrefHeight(72);
 
                     final int finalI = i;
                     final int finalJ = j;

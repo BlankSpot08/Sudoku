@@ -213,7 +213,6 @@ public class Sudoku {
                                 }
                             }
                         }
-
                         if (numbersOneToNine.size() != 0) {
                             if (z <= 5) {
                                 clear3x3(tiles, i, j);
@@ -285,6 +284,8 @@ public class Sudoku {
                     }
                 }
             }
+
+            System.out.println(Arrays.toString(tiles));
         }
 
         return tiles;

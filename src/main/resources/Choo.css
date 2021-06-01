@@ -1,15 +1,61 @@
 .root {
+    -fx-padding: 10 10 10 10;
+    -fx-background-color: white;
 }
 
 #title {
-    -fx-background-color: red;
     -fx-pref-height: 75;
 }
 
 #title .label {
-    -fx-background-color: blue;
+    -fx-text-fill: #005a8d;
+}
+
+#sudoku {
+    -fx-border-style: hidden solid solid hidden;
+    -fx-border-color: #005a8d;
+}
+
+#sudoku .button {
+    -fx-border-radius: 0;
+    -fx-border-color: #deeeea;
+    -fx-background-color: white;
+    -fx-font-size: 30px;
+    -fx-text-fill: #005a8d;
+}
+
+#3x3-inner {
+    -fx-border-style: solid hidden hidden solid;
+    -fx-border-color: #005a8d;
+}
+
+#numpad {
+
+}
+
+#numpad .button {
+    -fx-font-size: 30px;
+    -fx-background-color: #e1e5ea;
+    -fx-text-fill: #005a8d;
+    -fx-border-radius: 0;
+    -fx-padding: 5 5 5 5;
+}
+
+#new-game-button {
+    -fx-font-size: 20px;
+    -fx-background-color: #005a8d;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#give-up-button {
+    -fx-font-size: 20px;
+    -fx-background-color: #005a8d;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
 }
 
 .button {
     -fx-min-width: 25px;
 }
+
