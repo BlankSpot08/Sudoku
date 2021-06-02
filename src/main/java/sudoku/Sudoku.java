@@ -5,28 +5,6 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 public class Sudoku {
-    public int[][] generate2DArray() {
-        return convert3Dto2DSudoku(generate());
-    }
-
-    public int[][] convert3Dto2DSudoku(int[][][] sudoku) {
-        int[][] tempSudoku = new int[9][9];
-
-        for (int i = 0, l = 0; i < sudoku.length; i++) {
-            for (int j = 0, m = 0; j < sudoku[i].length; j++) {
-                for (int k = 0; k < sudoku[i][j].length; k++, m++) {
-                    tempSudoku[l][m] = sudoku[i][j][k];
-
-                    if (m == 8) {
-                        m = -1;
-                        l++;
-                    }
-                }
-            }
-        }
-
-        return tempSudoku;
-    }
     public int[][][] generate() {
         int[][][] tiles = new int[3][9][3];
 
