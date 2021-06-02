@@ -38,6 +38,10 @@ public class Controller implements SubComponent {
                 button.setPrefHeight(98);
                 button.setPrefWidth(98);
 
+                button.setOnAction(e -> {
+                    board.updateABox(Integer.parseInt(button.getText()), board.getOne()[0], board.getOne()[1], board.getOne()[2]);
+                });
+
                 gridPane.add(button, j, i);
             }
         }

@@ -24,13 +24,6 @@
     -fx-text-fill: #005a8d;
 }
 
-#sudoku-button-default {
-    -fx-border-radius: 0;
-    -fx-border-color: #deeeea;
-    -fx-background-color: white;
-    -fx-font-size: 30px;
-}
-
 #sudoku-button-selected {
     -fx-background-color: #e1e5ea;
     -fx-border-radius: 0;
@@ -71,11 +64,21 @@
     -fx-padding: 5 5 5 5;
 }
 
+#numpad .button:hover {
+    -fx-cursor: hand;
+    -fx-background-color: #BFC8D4;
+}
+
 #new-game-button {
     -fx-font-size: 20px;
     -fx-background-color: #005a8d;
     -fx-text-fill: white;
     -fx-font-weight: bold;
+}
+
+#new-game-button:hover {
+    -fx-cursor: hand;
+    -fx-background-color: #195172;
 }
 
 #give-up-button {
@@ -85,7 +88,13 @@
     -fx-font-weight: bold;
 }
 
+#give-up-button:hover {
+    -fx-cursor: hand;
+    -fx-background-color: #195172;
+}
+
 .button {
     -fx-min-width: 25px;
 }
+
 

@@ -14,6 +14,11 @@ public class Board implements SubComponent {
     private final Difficulty difficulty;
     private IntegerProperty[][][] sudoku;
     private Button[][][] board;
+    private final int[] one = { -1, -1, -1 };
+
+    public int[] getOne() {
+        return one;
+    }
 
     public Board(Difficulty difficulty) {
         this.difficulty = difficulty;
@@ -74,6 +79,8 @@ public class Board implements SubComponent {
             for (int j = 0; j < board[i].length; j++) {
                 for (int k = 0; k < board[i][j].length; k++) {
                     board[i][j][k] = new Button();
+                    board[i][j][k].setId("sudoku-button");
+
                     board[i][j][k].setPrefWidth(72);
                     board[i][j][k].setPrefHeight(72);
 
@@ -83,9 +90,22 @@ public class Board implements SubComponent {
 
                     board[i][j][k].setOnKeyReleased(e -> {
                         String input = e.getText();
+
                         if (checkIfInputIsDigit(input)) {
-                            board[finalI][finalJ][finalK].setText(input);
+                            updateABox(Integer.parseInt(input), finalI, finalJ, finalK);
                         }
+                    });
+
+                    board[i][j][k].setOnMouseClicked(e -> {
+                        if (one[0] != -1) {
+                            board[one[0]][one[1]][one[2]].setId("sudoku-button");
+                        }
+
+                        one[0] = finalI;
+                        one[1] = finalJ;
+                        one[2] = finalK;
+
+                        board[finalI][finalJ][finalK].setId("sudoku-button-selected");
                     });
 
                     if (difficulty.getAPassNumber()) {
@@ -98,10 +118,21 @@ public class Board implements SubComponent {
         return board;
     }
 
+    public void updateABox(int input, int i, int j, int k) {
+        board[i][j][k].setText(String.valueOf(input));
+
+        if (checkIfInputIsCorrect(input, sudoku[i][j][k].get())) {
+            board[i][j][k].setId("sudoku-button-correct");
+        } else {
+            board[i][j][k].setId("sudoku-button-incorrect");
+        }
+    }
+
     public Button[][][] giveUp() {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 for (int k = 0; k < board[i][j].length; k++) {
+                    board[i][j][k].setId("sudoku-button");
                     board[i][j][k].setText(String.valueOf(sudoku[i][j][k].get()));
                 }
             }
@@ -116,6 +147,8 @@ public class Board implements SubComponent {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 for (int k = 0; k < board[i][j].length; k++) {
+                    board[i][j][k].setId("sudoku-button");
+
                     board[i][j][k].setText("");
                     if (difficulty.getAPassNumber()) {
                         board[i][j][k].setText(String.valueOf(sudoku[i][j][k].get()));
@@ -127,7 +160,11 @@ public class Board implements SubComponent {
         return board;
     }
 
+    private boolean checkIfInputIsCorrect(int firstNum, int secondNum) {
+        return firstNum == secondNum;
+    }
+
     private boolean checkIfInputIsDigit(String input) {
-        return input.matches("[0-9]");
+        return input.matches("[1-9]");
     }
 }
