@@ -16,12 +16,42 @@
     -fx-border-color: #005a8d;
 }
 
-#sudoku .button {
+#sudoku-button {
     -fx-border-radius: 0;
     -fx-border-color: #deeeea;
     -fx-background-color: white;
     -fx-font-size: 30px;
     -fx-text-fill: #005a8d;
+}
+
+#sudoku-button-default {
+    -fx-border-radius: 0;
+    -fx-border-color: #deeeea;
+    -fx-background-color: white;
+    -fx-font-size: 30px;
+}
+
+#sudoku-button-selected {
+    -fx-background-color: #e1e5ea;
+    -fx-border-radius: 0;
+    -fx-border-color: #deeeea;
+    -fx-font-size: 30px;
+}
+
+#sudoku-button-correct {
+    -fx-background-color: #e1e5ea;
+    -fx-border-radius: 0;
+    -fx-border-color: #deeeea;
+    -fx-font-size: 30px;
+    -fx-text-fill: blue;
+}
+
+#sudoku-button-incorrect {
+    -fx-background-color: #e1e5ea;
+    -fx-border-radius: 0;
+    -fx-border-color: #deeeea;
+    -fx-font-size: 30px;
+    -fx-text-fill: red;
 }
 
 #3x3-inner {
